@@ -1,16 +1,19 @@
 <div class="container">
+  
   <div class="row">
     <h1><a href="<%= @link.url %>"><%= @link.title %></a><br></h1>
     <%= image_tag @link.image_url %>
   </div>
+  
   <div class="page-header">
     <h3>Submitted by <%= @link.user.name %></h3>
   </div>
   <br/>
+
   <div class="row">
     <%= @link.body %>
   </div>
-  </div>
+
   <div class="row">
   	<%= link_to 'Visit Original Story', @link.url, class: "btn btn-block btn-success" %>
   </div>
