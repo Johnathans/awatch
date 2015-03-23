@@ -1,0 +1,2 @@
+module UfoSightingsHelper
+end

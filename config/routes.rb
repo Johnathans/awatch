@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  #mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  resources :ufo_sightings
+
   resources :comments
 
   devise_for :users
+  resources :forum_threads do
+    resources :forum_posts, module: :forum_threads 
+  end
   resources :links do
     member do
       put "like", to:    "links#upvote"

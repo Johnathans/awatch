@@ -14,45 +14,85 @@
  *= require_self
  */
 
+$navbar-default-bg:                          #000000;
+$navbar-default:                          white;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+.clear {
+  clear: both;
+}
+
+.logo_image {
+	margin-top: -10px;
+}
+
 #logo {
 	font-size: 26px;
-	font-weight: 700;
+	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	padding: 15px 0;
 	a {
-		color: #2F363E;
+		color: white;
 	}
 }
 
-#main_content {
-	#content {
-		float: none;
-	}
-	padding-bottom: 100px;
-	.link {
-		padding: 2em 1em;
-		border-bottom: 1px solid #e9e9e9;
-		.title {
+.thumbnail {
+	max-width: 300px;
+	padding: 12px;
+	margin: 0 auto;
+	float: left;
+	max-height: 375px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
 
-			a {
-				color: #FF4500;
-			}
-		}
-	}
-	.comments_title {
-		margin-top: 2em;
-	}
-	#comments {
-		.comment {
-			padding: 1em 0;
-			border-top: 1px solid #E9E9E9;
-			.lead {
-				margin-bottom: 0;
-			}
-		}
-	}
+.btn-sample { 
+  color: #ffffff; 
+  background-color: #FA6900; 
+  border-color: #FA6900; 
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #ffffff; 
+  background-color: #D16E27; 
+  border-color: #FA6900; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #FA6900; 
+  border-color: #FA6900; 
+} 
+ 
+.btn-sample .badge { 
+  color: #FA6900; 
+  background-color: #ffffff; 
 }

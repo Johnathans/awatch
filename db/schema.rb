@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140907165355) do
+ActiveRecord::Schema.define(version: 20150323044751) do
 
   create_table "comments", force: true do |t|
     t.integer  "link_id"
@@ -24,15 +24,55 @@ ActiveRecord::Schema.define(version: 20140907165355) do
   add_index "comments", ["link_id"], name: "index_comments_on_link_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+  create_table "forum_posts", force: true do |t|
+    t.integer  "forum_thread_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forum_threads", force: true do |t|
+    t.integer  "user_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "links", force: true do |t|
     t.string   "title"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "image"
+    t.text     "body"
   end
 
   add_index "links", ["user_id"], name: "index_links_on_user_id"
+
+  create_table "ufo_sightings", force: true do |t|
+    t.string   "address"
+    t.string   "craft"
+    t.string   "details"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

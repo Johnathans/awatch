@@ -1,0 +1,30 @@
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@ufo_sighting.latitude}%2C#{@ufo_sighting.longitude}" %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @ufo_sighting.address %>
+</p>
+
+<p>
+  <strong>Craft:</strong>
+  <%= @ufo_sighting.craft %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @ufo_sighting.details %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @ufo_sighting.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @ufo_sighting.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_ufo_sighting_path(@ufo_sighting) %> |
+<%= link_to 'Back', ufo_sightings_path %>

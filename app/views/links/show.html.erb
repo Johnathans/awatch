@@ -1,42 +1,39 @@
-<div class="page-header">
-  <h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>Submitted by <%= @link.user.name %></small></h1>
-</div>
-
-<div class="btn-group">
-	<%= link_to 'Visit URL', @link.url, class: "btn btn-primary" %>
-</div>
-
-<div class="btn-group pull-right">
-  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-up"></span>
-    Upvote
-    <%= @link.get_upvotes.size %>
-  <% end %>
-  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-down">
-    Downvote
-    <%= @link.get_downvotes.size %>
-  <% end %>
-</div>
-
-<% if @link.user == current_user -%>
-	<div class="btn-group">
-		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
-	</div>
-<% end %>
-
-<h3 class="comments_title">
-  <%= @link.comments.count %> Comments
-</h3>
-
-<div id="comments">
-  <%= render :partial => @link.comments %>
-</div>
-<%= simple_form_for [@link, Comment.new]  do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
+<div class="container">
+  <div class="row">
+    <h1><a href="<%= @link.url %>"><%= @link.title %></a><br></h1>
+    <%= image_tag @link.image_url %>
   </div>
-  <br>
-  <%= f.submit "Add Comment", class: "btn btn-primary" %>
-<% end %>
+  <div class="page-header">
+    <h3>Submitted by <%= @link.user.name %></h3>
+  </div>
+  <br/>
+  <div class="row">
+    <%= @link.body %>
+  </div>
+  </div>
+  <div class="row">
+  	<%= link_to 'Visit Original Story', @link.url, class: "btn btn-block btn-success" %>
+  </div>
+
+  <% if @link.user == current_user -%>
+  	<div class="btn-group">
+  		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-info" %>
+  		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+  	</div>
+  <% end %>
+
+  <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'awatchlist';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
