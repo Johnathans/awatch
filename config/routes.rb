@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  get 'pages/about'
+  get 'about' => 'pages#about'
 
-  get 'pages/terms'
+  get 'terms' => 'pages#terms'
 
-  get 'pages/privacy'
+  get 'privacy' => 'pages#privacy'
 
-  get 'pages/contact'
+  get 'contact' => 'pages#contact'
 
-  get 'pages/advertising'
+  get 'advertising' => 'pages#advertising'
 
-  get 'pages/write'
+  get 'write' => 'pages#write'
 
   #mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :ufo_sightings

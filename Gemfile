@@ -20,10 +20,14 @@ gem 'simple_form', '~> 3.0.2'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'sqlite3'
+
+
+gem 'rails_12factor', group: :production
+gem 'pg', group: :production
 
 group :development do
 	gem "better_errors"
 	gem "binding_of_caller"
 	gem 'annotate'
+  gem 'sqlite3'
 end
