@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :conspiracies
+
   get 'about' => 'pages#about'
 
   get 'terms' => 'pages#terms'

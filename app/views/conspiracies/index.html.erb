@@ -1,0 +1,23 @@
+<div class="container">
+<div class="jumbotron">
+  <h2>Conspiracy Theory</h2>
+  <h3>A term first used by President Nixon to demonize those who questioned his actions. Eventually he was found to have been involved in an actual consipracy.</h3>
+  <h3>It was a conspiracy but it was not theory.</h3>
+</div>
+
+<table class="table table-striped table-bordered">
+  <% @conspiracies.each do |conspiracy| %>
+    <tr>
+      <td><%= image_tag conspiracy.image.url(:thumb) %></td>
+      <td><%= raw conspiracy.body.truncate(300) %></td>
+      <td>
+        <%= link_to "View", conspiracy, class: "btn btn-block btn-sm btn-success" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_conspiracy_path, class: "btn btn-link" %>
+<% end %>
+</div>

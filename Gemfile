@@ -9,6 +9,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'fog', '~> 1.28.0'
+gem "figaro"
 gem 'turbolinks'
 gem 'bootsy'
 gem 'tinymce-rails'

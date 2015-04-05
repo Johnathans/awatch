@@ -10,9 +10,11 @@
 #  user_id    :integer
 #  image      :string(255)
 #  body       :text
+#  slug       :string(255)
 #
 # Indexes
 #
+#  index_links_on_slug     (slug) UNIQUE
 #  index_links_on_user_id  (user_id)
 #
 
