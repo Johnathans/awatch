@@ -36,6 +36,20 @@ $navbar-default:                          white;
   text-align: center;
 }
 
+.table {
+    border-collapse: collapse !important;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
 #logo {
 	font-size: 26px;
 	font-weight: 500;

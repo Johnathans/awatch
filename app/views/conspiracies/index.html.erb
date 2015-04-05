@@ -8,8 +8,10 @@
 <table class="table table-striped table-bordered">
   <% @conspiracies.each do |conspiracy| %>
     <tr>
-      <td><%= image_tag conspiracy.image.url(:thumb) %></td>
-      <td><%= raw conspiracy.body.truncate(300) %></td>
+      <td><%= image_tag conspiracy.image.url(:mini) %></td>
+      <td>
+      <b><%= conspiracy.title %></b><br/>
+      <%= raw conspiracy.body.truncate(300) %></td>
       <td>
         <%= link_to "View", conspiracy, class: "btn btn-block btn-sm btn-success" %>
       </td>
