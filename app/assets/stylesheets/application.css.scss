@@ -16,7 +16,7 @@
 
 $navbar-default-bg:                          #000000;
 $navbar-default:                          white;
-
+@import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -26,8 +26,18 @@ $navbar-default:                          white;
   clear: both;
 }
 
+.linktitle {
+  font-size: 17px;
+  margin-left: -10px;
+  padding-bottom: -10px;
+}
+
 .logo_image {
 	margin-top: -10px;
+}
+
+.thumbnail {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.03);
 }
 
 .jumbotron {
@@ -59,16 +69,6 @@ th {
 	a {
 		color: white;
 	}
-}
-
-.thumbnail {
-	max-width: 300px;
-	padding: 12px;
-	margin: 0 auto;
-	float: left;
-	max-height: 375px;
-	margin-right: 10px;
-	margin-bottom: 20px;
 }
 
 .btn-sample { 
@@ -116,3 +116,4 @@ fieldset[disabled] .btn-sample.active {
   color: #FA6900; 
   background-color: #ffffff; 
 }
+

@@ -1,12 +1,5 @@
 <title>Alien Watch List | UFOs, Conspiracies, Abductions</title>
-<% @links.each do |link| %>
-  <div class="thumbnail"> 
-    <h3>
-      <%= link_to link.title, link %>
-    </h3>
-    <%= image_tag link.image_url %>
-    <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %></small>
-    <a class="btn btn-success btn-sm btn-block" href="<%= link %>">Read More</a>
-  </div>
-<% end %>
+<div class="row">
+<%= render @links %>
+</div>
 <div class="clear"></div>

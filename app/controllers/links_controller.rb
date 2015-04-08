@@ -78,7 +78,7 @@ class LinksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_link
-      @link = Link.find(params[:id])
+      @link = Link.friendly.find(params[:id])
     end
 
     def authorized_user

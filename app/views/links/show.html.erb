@@ -2,7 +2,7 @@
   
   <div class="row">
     <h1><a href="<%= @link.url %>"><%= @link.title %></a><br></h1>
-    <%= image_tag @link.image_url %>
+    <%= image_tag @link.image_url(:showpost) %>
   </div>
   
   <div class="page-header text-muted">
