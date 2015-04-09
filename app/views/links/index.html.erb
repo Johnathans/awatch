@@ -3,3 +3,6 @@
 <%= render @links %>
 </div>
 <div class="clear"></div>
+<div class="text-center">
+   <%= will_paginate @links, renderer: BootstrapPagination::Rails %>
+</div>

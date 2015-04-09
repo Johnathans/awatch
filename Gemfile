@@ -11,6 +11,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'fog', '~> 1.28.0'
 gem "figaro"
+gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 gem 'turbolinks'
 gem 'bootsy'
 gem 'tinymce-rails'

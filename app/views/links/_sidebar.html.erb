@@ -1,0 +1,5 @@
+<% @links.each do |link| %>
+        <div class="well"><strong class="linktitle"><%= link_to link.title, link %></strong>
+          <%= image_tag link.image_url(:mini), class: "img-responsive" %>
+        </div>
+<% end %>

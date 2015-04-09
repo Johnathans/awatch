@@ -4,7 +4,7 @@ class ConspiraciesController < ApplicationController
   # GET /conspiracies
   # GET /conspiracies.json
   def index
-    @conspiracies = Conspiracy.all
+    @conspiracies = Conspiracy.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /conspiracies/1

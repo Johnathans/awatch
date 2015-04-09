@@ -19,6 +19,10 @@
   <% end %>
 </table>
 
+<div class="text-center">
+   <%= will_paginate @conspiracies, renderer: BootstrapPagination::Rails %>
+</div>
+
 <% if user_signed_in? %>
   <%= link_to 'New Listing', new_conspiracy_path, class: "btn btn-link" %>
 <% end %>

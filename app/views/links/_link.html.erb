@@ -1,9 +1,9 @@
 <div class="col-md-3">
   <div class="thumbnail">
+    <div class="caption">
+      <strong class="linktitle"><%= link_to link.title, link %></strong>
+    </div>
     <%= image_tag link.image_url(:homepost), class: "img-responsive" %>
-  <div class="caption">
-    <strong class="linktitle"><%= link_to link.title, link %></strong>
-  </div>
   <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %></small></br>
     <a class="btn btn-success btn-sm" href="<%= link %>">View Story</a>
   </div>
